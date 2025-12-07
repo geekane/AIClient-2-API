@@ -215,7 +215,7 @@ async function handleGoogleOAuth(providerKey, currentConfig) {
     });
     
     // 启动回调服务器
-    const credPath = path.join(os.homedir(), config.credentialsDir, config.credentialsFile);
+    const credPath = path.join(process.cwd(), config.credentialsDir, config.credentialsFile);
     
     try {
         await createOAuthCallbackServer(config, redirectUri, authClient, credPath, providerKey);

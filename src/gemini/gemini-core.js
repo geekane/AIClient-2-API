@@ -222,7 +222,7 @@ export class GeminiApiService {
             }
         }
 
-        const credPath = this.oauthCredsFilePath || path.join(os.homedir(), CREDENTIALS_DIR, CREDENTIALS_FILE);
+        const credPath = this.oauthCredsFilePath || path.join(process.cwd(), CREDENTIALS_DIR, CREDENTIALS_FILE);
         try {
             const data = await fs.readFile(credPath, "utf8");
             const credentials = JSON.parse(data);
