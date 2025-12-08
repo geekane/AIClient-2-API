@@ -29,4 +29,4 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
 # 设置启动命令
 # 使用 Render 自动注入的环境变量 PORT
 # 并绑定 0.0.0.0
-CMD ["sh", "-c", "node src/api-server.js --port ${PORT:-3000}"]
+CMD ["sh", "-c", "node src/api-server.js --host 0.0.0.0 --port ${PORT:-3000}"]
